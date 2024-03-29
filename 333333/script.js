@@ -1,8 +1,8 @@
 // 定義變數
 let canvas = document.getElementById("myCanvas");
 let ctx = canvas.getContext("2d");
-let x1 = 0, y1 = 0, dx1 = 5, dy1 = 5, r1 = 80, color1 = "#0095DD";
-let x2 = canvas.width, y2 =0, dx2 = -5, dy2 =-5, r2 = 50, color2 = "#BBFFFF";
+let x1 = 100, y1 = 100, dx1 = 5, dy1 = 5, r1 = 80, color1 = "#0095DD";
+let x2 = 300, y2 =300, dx2 = -5, dy2 =-5, r2 = 50, color2 = "#BBFFFF";
 let ndx1=0,ndy1=0,ndx2=0,ndy2=0;// 畫圓形
 function drawBall(x, y, r, color)
 {
@@ -26,23 +26,23 @@ function draw()
 
     // TODO: 如果發生碰撞(畫布寬canvas.width, 畫布高canvas.height)，則改變速度(dx, dy)和顏色(color)
     // ...
-  if(x1<0|| x1>canvas.width)
+  if(x1-r1<0|| x1+r1>canvas.width)
   {
     dx1 = -dx1;
     color1 ="#" + Math.floor(Math.random()*16777215).toString(16);
   }
-  if(y1<0|| y1>canvas.height)
+  if(y1-r1<0|| y1+r1>canvas.height)
   {
     dy1 = -dy1; 
     color1 ="#" + Math.floor(Math.random()*16777215).toString(16);
   }
   
-  if(x2<0|| x2>canvas.width)
+  if(x2-r2<0|| x2+r2>canvas.width)
   {
     dx2 = -dx2;
     color2 ="#" + Math.floor(Math.random()*16777215).toString(16);
   }
-  if(y2<0|| y2>canvas.height)
+  if(y2-r2<0|| y2+r2>canvas.height)
   {
     dy2 = -dy2; 
     color2 ="#" + Math.floor(Math.random()*16777215).toString(16);
